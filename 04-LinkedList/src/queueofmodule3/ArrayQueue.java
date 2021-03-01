@@ -1,4 +1,4 @@
-package queueof03module;
+package queueofmodule3;
 
 import arrayof01module.Array;
 

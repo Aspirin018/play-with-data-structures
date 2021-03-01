@@ -1,6 +1,6 @@
-import queueof03module.ArrayQueue;
-import queueof03module.LoopQueue;
-import queueof03module.Queue;
+import queueofmodule3.ArrayQueue;
+import queueofmodule3.LoopQueue;
+import queueofmodule3.Queue;
 
 import java.util.Random;
 

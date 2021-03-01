@@ -1,4 +1,4 @@
-package queueof03module;
+package queueofmodule3;
 
 
 public class LoopQueue<E> implements Queue<E> {

@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * 测试比较ArrayStack和LinkedListStack的
  */
-public class TestCompare {
+public class TestCompareStack {
 
     private static void test(Stack<Integer> stack, int count) {
         long startTime = System.nanoTime();

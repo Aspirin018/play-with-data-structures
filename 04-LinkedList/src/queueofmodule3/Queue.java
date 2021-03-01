@@ -1,4 +1,4 @@
-package queueof03module;
+package queueofmodule3;
 
 public interface Queue<E> {
     void enqueue(E e);
