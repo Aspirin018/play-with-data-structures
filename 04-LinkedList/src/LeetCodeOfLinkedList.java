@@ -1,6 +1,7 @@
 public class LeetCodeOfLinkedList {
     /**
      * 测试实现方案
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -114,65 +115,69 @@ public class LeetCodeOfLinkedList {
         }
     }
 
+
+}
+
+/**
+ * leetcode中的ListNode
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class ListNode {
+    public int val;
+    public ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
     /**
-     * leetcode中的ListNode
-     * Definition for singly-linked list.
-     * public class ListNode {
-     * int val;
-     * ListNode next;
-     * ListNode() {}
-     * ListNode(int val) { this.val = val; }
-     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-     * }
+     * 为Leetcode的ListNode类新增构造函数
+     * 传入数组，生成一个链表
+     *
+     * @param arr
      */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
+    public ListNode(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array cannot be empty.");
         }
-
-        ListNode(int val) {
-            this.val = val;
+        this.val = arr[0];
+        ListNode current = this;
+        for (int i = 1; i < arr.length; i++) {
+            current.next = new ListNode(arr[i]);
+            current = current.next;
         }
+    }
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
+    /**
+     * 为Leetcode中的ListNode添加toString方法，打印出整个链表元素
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        ListNode current = this;
+        while (current != null) {
+            builder.append(current.val + " -> ");
+            current = current.next;
         }
-
-        /**
-         * 为Leetcode的ListNode类新增构造函数
-         * 传入数组，生成一个链表
-         * @param arr
-         */
-        ListNode(int[] arr) {
-            if (arr == null || arr.length == 0) {
-                throw new IllegalArgumentException("Array cannot be empty.");
-            }
-            this.val = arr[0];
-            ListNode current = this;
-            for (int i = 1; i < arr.length; i++) {
-                current.next = new ListNode(arr[i]);
-                current = current.next;
-            }
-        }
-
-        /**
-         * 为Leetcode中的ListNode添加toString方法，打印出整个链表元素
-         * @return
-         */
-        @Override
-        public String toString() {
-            StringBuilder builder = new StringBuilder();
-            ListNode current = this;
-            while (current != null) {
-                builder.append(current.val + " -> ");
-                current = current.next;
-            }
-            builder.append("NULL");
-            return builder.toString();
-        }
+        builder.append("NULL");
+        return builder.toString();
     }
 }
 
